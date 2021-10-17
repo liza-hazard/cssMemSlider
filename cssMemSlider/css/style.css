@@ -1,3 +1,258 @@
-body {
-    font-size: 18px;
+main .container {
+    max-width: 60em;
+    margin: 1em auto;
+    position: relative
+}
+
+main input {
+    display: none
+}
+
+main .slider-blocks {
+    width: 500%;
+    line-height: 0
+}
+
+main .slide {
+    width: 20%;
+    float: left;
+    position: relative
+}
+
+main .slide img {
+    width: 100%
+}
+
+main .slider-prev-next-control {
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%)
+}
+
+main .slider-prev-next-control label {
+    display: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #fff;
+    opacity: .7
+}
+
+main .slider-prev-next-control label:hover {
+    opacity: 1
+}
+
+main .slider-dot-control {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    text-align: center
+}
+
+main .slider-dot-control label {
+    cursor: pointer;
+    border-radius: 5px;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #bbb;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s
+}
+
+main .slider-dot-control label:hover {
+    background: #ccc;
+    border-color: #777
+}
+
+main .phrase {
+    position: absolute;
+    font-style: italic;
+    line-height: 20px;
+    opacity: 0;
+    color: #000;
+    text-align: left;
+    -webkit-transition: all 1s ease-out .6s;
+    -moz-transition: all 1s ease-out .6s;
+    transition: all 1s ease-out .6s
+}
+
+main .phrase h3 {
+    color: #fcfff4;
+    margin: 0 0 5px;
+    font-weight: 400;
+    font-size: 1.5em;
+    font-style: normal
+}
+
+main .phrase.top-left {
+    top: 30px;
+    left: 30px
+}
+
+main .phrase.top-right {
+    top: 30px;
+    right: 30px
+}
+
+main .phrase.bottom-left {
+    bottom: 30px;
+    left: 30px
+}
+
+main .phrase.bottom-right {
+    bottom: 30px;
+    right: 30px
+}
+
+main .slider-container {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 1px 1px 4px #666;
+    background: #fff;
+    background: #fcfff4;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-transition: all .5s ease-out;
+    -moz-transition: all .5s ease-out;
+    transition: all .5s ease-out
+}
+
+main .slider-container .slider-blocks {
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-transition: all .8s cubic-bezier(.77, 0, .175, 1);
+    -moz-transition: all .8s cubic-bezier(.77, 0, .175, 1);
+    transition: all .8s cubic-bezier(.77, 0, .175, 1)
+}
+
+main #slide1:checked~.slider-prev-next-control label:nth-child(2)::after,
+main #slide1:checked~.slider-prev-next-control label:nth-child(5)::after,
+main #slide2:checked~.slider-prev-next-control label:nth-child(1)::after,
+main #slide2:checked~.slider-prev-next-control label:nth-child(3)::after,
+main #slide3:checked~.slider-prev-next-control label:nth-child(2)::after,
+main #slide3:checked~.slider-prev-next-control label:nth-child(4)::after,
+main #slide4:checked~.slider-prev-next-control label:nth-child(3)::after,
+main #slide4:checked~.slider-prev-next-control label:nth-child(5)::after,
+main #slide5:checked~.slider-prev-next-control label:nth-child(1)::after,
+main #slide5:checked~.slider-prev-next-control label:nth-child(4)::after {
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: 400;
+    text-decoration: inherit;
+    margin: 0;
+    line-height: 38px;
+    font-size: 3em;
+    display: block;
+    color: #777
+}
+
+main #slide1:checked~.slider-prev-next-control label:nth-child(2)::after,
+main #slide2:checked~.slider-prev-next-control label:nth-child(3)::after,
+main #slide3:checked~.slider-prev-next-control label:nth-child(4)::after,
+main #slide4:checked~.slider-prev-next-control label:nth-child(5)::after,
+main #slide5:checked~.slider-prev-next-control label:nth-child(1)::after {
+    content: "\f105";
+    padding-left: 15px
+}
+
+main #slide1:checked~.slider-prev-next-control label:nth-child(2),
+main #slide2:checked~.slider-prev-next-control label:nth-child(3),
+main #slide3:checked~.slider-prev-next-control label:nth-child(4),
+main #slide4:checked~.slider-prev-next-control label:nth-child(5),
+main #slide5:checked~.slider-prev-next-control label:nth-child(1) {
+    display: block;
+    float: right;
+    margin-right: 5px
+}
+
+main #slide1:checked~.slider-prev-next-control label:nth-child(5),
+main #slide2:checked~.slider-prev-next-control label:nth-child(1),
+main #slide3:checked~.slider-prev-next-control label:nth-child(2),
+main #slide4:checked~.slider-prev-next-control label:nth-child(3),
+main #slide5:checked~.slider-prev-next-control label:nth-child(4) {
+    display: block;
+    float: left;
+    margin-left: 5px
+}
+
+main #slide1:checked~.slider-prev-next-control label:nth-child(5)::after,
+main #slide2:checked~.slider-prev-next-control label:nth-child(1)::after,
+main #slide3:checked~.slider-prev-next-control label:nth-child(2)::after,
+main #slide4:checked~.slider-prev-next-control label:nth-child(3)::after,
+main #slide5:checked~.slider-prev-next-control label:nth-child(4)::after {
+    content: "\f104";
+    padding-left: 8px
+}
+
+main #slide1:checked~.slider-dot-control label:nth-child(1),
+main #slide2:checked~.slider-dot-control label:nth-child(2),
+main #slide3:checked~.slider-dot-control label:nth-child(3),
+main #slide4:checked~.slider-dot-control label:nth-child(4),
+main #slide5:checked~.slider-dot-control label:nth-child(5) {
+    background: #333
+}
+
+main #slide1:checked~.slider-container .slide:nth-child(1) .phrase,
+main #slide2:checked~.slider-container .slide:nth-child(2) .phrase,
+main #slide3:checked~.slider-container .slide:nth-child(3) .phrase,
+main #slide4:checked~.slider-container .slide:nth-child(4) .phrase,
+main #slide5:checked~.slider-container .slide:nth-child(5) .phrase {
+    opacity: 1
+}
+
+main #slide1:checked~.slider-container .slider-blocks {
+    margin-left: 0
+}
+
+main #slide2:checked~.slider-container .slider-blocks {
+    margin-left: -100%
+}
+
+main #slide3:checked~.slider-container .slider-blocks {
+    margin-left: -200%
+}
+
+main #slide4:checked~.slider-container .slider-blocks {
+    margin-left: -300%
+}
+
+main #slide5:checked~.slider-container .slider-blocks {
+    margin-left: -400%
+}
+
+@media only screen and (max-width:850px) and (min-width:450px) {
+    main .slider-container {
+        border-radius: 0
+    }
+}
+
+@media only screen and (max-width:450px) {
+    main .slider-container {
+        border-radius: 0
+    }
+
+    main .slider-container .phrase {
+        opacity: 0
+    }
+}
+
+@media only screen and (min-width:850px) {
+    main body {
+        padding: 0 80px
+    }
 }
