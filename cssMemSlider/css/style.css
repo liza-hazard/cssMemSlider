@@ -1,5 +1,8 @@
+body {
+    background: #25282A;
+}
 main .container {
-    max-width: 60em;
+    max-width: 75em;
     margin: 1em auto;
     position: relative
 }
@@ -8,54 +11,32 @@ main input {
     display: none
 }
 
-main .slider-blocks {
+main .slider-blocks, main .bottom-container .phrase-blocks {
     width: 500%;
     line-height: 0
 }
-
 main .slide {
+    max-height: 60vh;
+    border-radius: 10px;
+    overflow: hidden;
+}
+main .slide, main .bottom-container .phrase-b {
     width: 20%;
     float: left;
-    position: relative
+    position: relative;
 }
 
 main .slide img {
-    width: 100%
-}
-
-main .slider-prev-next-control {
-    height: 50px;
-    position: absolute;
-    top: 50%;
     width: 100%;
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    transform: translateY(-50%)
+
 }
 
-main .slider-prev-next-control label {
-    display: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: #fff;
-    opacity: .7
-}
-
-main .slider-prev-next-control label:hover {
-    opacity: 1
-}
-
-main .slider-dot-control {
-    position: absolute;
+main .slider-dots {
     width: 100%;
-    bottom: 0;
-    text-align: center
+    text-align: right;
 }
 
-main .slider-dot-control label {
+main .slider-dots label {
     cursor: pointer;
     border-radius: 5px;
     display: inline-block;
@@ -67,13 +48,12 @@ main .slider-dot-control label {
     transition: all .3s
 }
 
-main .slider-dot-control label:hover {
+main .bottom-container .slider-dots label:hover {
     background: #ccc;
     border-color: #777
 }
 
-main .phrase {
-    position: absolute;
+main .phrase-b {
     font-style: italic;
     line-height: 20px;
     opacity: 0;
@@ -84,41 +64,20 @@ main .phrase {
     transition: all 1s ease-out .6s
 }
 
-main .phrase h3 {
+main .phrase-b h3 {
     color: #fcfff4;
     margin: 0 0 5px;
     font-weight: 400;
     font-size: 1.5em;
     font-style: normal
 }
-
-main .phrase.top-left {
-    top: 30px;
-    left: 30px
+main .bottom-container {
+    display: flex;
 }
 
-main .phrase.top-right {
-    top: 30px;
-    right: 30px
-}
-
-main .phrase.bottom-left {
-    bottom: 30px;
-    left: 30px
-}
-
-main .phrase.bottom-right {
-    bottom: 30px;
-    right: 30px
-}
-
-main .slider-container {
+main .slider-container, main .bottom-container .phrase-container {
     width: 100%;
     overflow: hidden;
-    border-radius: 5px;
-    box-shadow: 1px 1px 4px #666;
-    background: #fff;
-    background: #fcfff4;
     -webkit-transform: translateZ(0);
     -moz-transform: translateZ(0);
     -ms-transform: translateZ(0);
@@ -129,7 +88,7 @@ main .slider-container {
     transition: all .5s ease-out
 }
 
-main .slider-container .slider-blocks {
+main .slider-container .slider-blocks, main .bottom-container .phrase-container .phrase-blocks {
     -webkit-transform: translateZ(0);
     -moz-transform: translateZ(0);
     -ms-transform: translateZ(0);
@@ -140,98 +99,31 @@ main .slider-container .slider-blocks {
     transition: all .8s cubic-bezier(.77, 0, .175, 1)
 }
 
-main #slide1:checked~.slider-prev-next-control label:nth-child(2)::after,
-main #slide1:checked~.slider-prev-next-control label:nth-child(5)::after,
-main #slide2:checked~.slider-prev-next-control label:nth-child(1)::after,
-main #slide2:checked~.slider-prev-next-control label:nth-child(3)::after,
-main #slide3:checked~.slider-prev-next-control label:nth-child(2)::after,
-main #slide3:checked~.slider-prev-next-control label:nth-child(4)::after,
-main #slide4:checked~.slider-prev-next-control label:nth-child(3)::after,
-main #slide4:checked~.slider-prev-next-control label:nth-child(5)::after,
-main #slide5:checked~.slider-prev-next-control label:nth-child(1)::after,
-main #slide5:checked~.slider-prev-next-control label:nth-child(4)::after {
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: 400;
-    text-decoration: inherit;
-    margin: 0;
-    line-height: 38px;
-    font-size: 3em;
-    display: block;
-    color: #777
-}
-
-main #slide1:checked~.slider-prev-next-control label:nth-child(2)::after,
-main #slide2:checked~.slider-prev-next-control label:nth-child(3)::after,
-main #slide3:checked~.slider-prev-next-control label:nth-child(4)::after,
-main #slide4:checked~.slider-prev-next-control label:nth-child(5)::after,
-main #slide5:checked~.slider-prev-next-control label:nth-child(1)::after {
-    content: "\f105";
-    padding-left: 15px
-}
-
-main #slide1:checked~.slider-prev-next-control label:nth-child(2),
-main #slide2:checked~.slider-prev-next-control label:nth-child(3),
-main #slide3:checked~.slider-prev-next-control label:nth-child(4),
-main #slide4:checked~.slider-prev-next-control label:nth-child(5),
-main #slide5:checked~.slider-prev-next-control label:nth-child(1) {
-    display: block;
-    float: right;
-    margin-right: 5px
-}
-
-main #slide1:checked~.slider-prev-next-control label:nth-child(5),
-main #slide2:checked~.slider-prev-next-control label:nth-child(1),
-main #slide3:checked~.slider-prev-next-control label:nth-child(2),
-main #slide4:checked~.slider-prev-next-control label:nth-child(3),
-main #slide5:checked~.slider-prev-next-control label:nth-child(4) {
-    display: block;
-    float: left;
-    margin-left: 5px
-}
-
-main #slide1:checked~.slider-prev-next-control label:nth-child(5)::after,
-main #slide2:checked~.slider-prev-next-control label:nth-child(1)::after,
-main #slide3:checked~.slider-prev-next-control label:nth-child(2)::after,
-main #slide4:checked~.slider-prev-next-control label:nth-child(3)::after,
-main #slide5:checked~.slider-prev-next-control label:nth-child(4)::after {
-    content: "\f104";
-    padding-left: 8px
-}
-
-main #slide1:checked~.slider-dot-control label:nth-child(1),
-main #slide2:checked~.slider-dot-control label:nth-child(2),
-main #slide3:checked~.slider-dot-control label:nth-child(3),
-main #slide4:checked~.slider-dot-control label:nth-child(4),
-main #slide5:checked~.slider-dot-control label:nth-child(5) {
+main #slide1:checked~.bottom-container .slider-dots label:nth-child(1),
+main #slide2:checked~.bottom-container .slider-dots label:nth-child(2),
+main #slide3:checked~.bottom-container .slider-dots label:nth-child(3),
+main #slide4:checked~.bottom-container .slider-dots label:nth-child(4),
+main #slide5:checked~.bottom-container .slider-dots label:nth-child(5) {
     background: #333
 }
 
-main #slide1:checked~.slider-container .slide:nth-child(1) .phrase,
-main #slide2:checked~.slider-container .slide:nth-child(2) .phrase,
-main #slide3:checked~.slider-container .slide:nth-child(3) .phrase,
-main #slide4:checked~.slider-container .slide:nth-child(4) .phrase,
-main #slide5:checked~.slider-container .slide:nth-child(5) .phrase {
-    opacity: 1
-}
-
-main #slide1:checked~.slider-container .slider-blocks {
+main #slide1:checked~.slider-container .slider-blocks,main #slide1:checked~.bottom-container .phrase-container .phrase-blocks {
     margin-left: 0
 }
 
-main #slide2:checked~.slider-container .slider-blocks {
+main #slide2:checked~.slider-container .slider-blocks,main #slide2:checked~.bottom-container .phrase-container .phrase-blocks {
     margin-left: -100%
 }
 
-main #slide3:checked~.slider-container .slider-blocks {
+main #slide3:checked~.slider-container .slider-blocks, main #slide3:checked~.bottom-container .phrase-container .phrase-blocks {
     margin-left: -200%
 }
 
-main #slide4:checked~.slider-container .slider-blocks {
+main #slide4:checked~.slider-container .slider-blocks, main #slide4:checked~.bottom-container .phrase-container .phrase-blocks {
     margin-left: -300%
 }
 
-main #slide5:checked~.slider-container .slider-blocks {
+main #slide5:checked~.slider-container .slider-blocks, main #slide5:checked~.bottom-container .phrase-container .phrase-blocks {
     margin-left: -400%
 }
 
