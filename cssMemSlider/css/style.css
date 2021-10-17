@@ -19,6 +19,8 @@ main .slide {
     max-height: 60vh;
     border-radius: 10px;
     overflow: hidden;
+    text-align: center;
+    background: #fff;
 }
 main .slide, main .bottom-container .phrase-b {
     width: 20%;
@@ -27,8 +29,8 @@ main .slide, main .bottom-container .phrase-b {
 }
 
 main .slide img {
-    width: 100%;
-
+    width: auto;
+    height: 60vh;
 }
 
 main .slider-dots {
