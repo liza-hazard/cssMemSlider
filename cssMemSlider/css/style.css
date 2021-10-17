@@ -1,0 +1,170 @@
+body {
+    background: #25282A;
+}
+main .container {
+    max-width: 85%;
+    margin: 1em auto;
+    position: relative
+}
+
+main input {
+    display: none
+}
+
+main .slider-blocks, main .bottom-container .phrase-blocks {
+    width: 500%;
+    line-height: 0
+}
+main .slide {
+    max-height: 60vh;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    background: #fff;
+}
+main .slide, main .bottom-container .phrase-b {
+    width: 20%;
+    float: left;
+    position: relative;
+}
+
+main .slide img {
+    width: auto;
+    height: 60vh;
+}
+
+main .slider-dots {
+    width: 100%;
+    text-align: right;
+}
+
+main .slider-dots label {
+    cursor: pointer;
+    border-radius: 50%;
+    display: inline-block;
+    width: 0.8em;
+    height: 0.8em;
+    background: #bbb;
+    border: 1px solid #bbb;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s
+}
+
+main .bottom-container .slider-dots label:hover {
+    background: transparent;
+    border: 1px solid #ccc;
+}
+
+main .phrase-b {
+    font-style: italic;
+    opacity: 0;
+    color: #000;
+    text-align: left;
+    -webkit-transition: all 1s ease-out .6s;
+    -moz-transition: all 1s ease-out .6s;
+    transition: all 1s ease-out .6s
+}
+
+main .phrase-b h3 {
+    color: #fcfff4;
+    font-weight: 400;
+    font-size: 1.5em;
+    font-style: normal
+}
+main .bottom-container {
+    display: flex;
+    align-items: center;
+}
+main .slider-container {
+    margin-bottom: 5%;
+}
+main .slider-container, main .bottom-container .phrase-container {
+    width: 100%;
+    overflow: hidden;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-transition: all .5s ease-out;
+    -moz-transition: all .5s ease-out;
+    transition: all .5s ease-out
+}
+
+main .slider-container .slider-blocks, main .bottom-container .phrase-container .phrase-blocks {
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-transition: all .8s cubic-bezier(.77, 0, .175, 1);
+    -moz-transition: all .8s cubic-bezier(.77, 0, .175, 1);
+    transition: all .8s cubic-bezier(.77, 0, .175, 1)
+}
+
+main #slide1:checked~.bottom-container .slider-dots label:nth-child(1),
+main #slide2:checked~.bottom-container .slider-dots label:nth-child(2),
+main #slide3:checked~.bottom-container .slider-dots label:nth-child(3),
+main #slide4:checked~.bottom-container .slider-dots label:nth-child(4),
+main #slide5:checked~.bottom-container .slider-dots label:nth-child(5) {
+    background: #333;
+    border-color: #333;
+}
+main #slide1:checked~.bottom-container .slider-dots label:hover {
+    background: #333;
+    border-color: #ccc;
+
+}
+
+main #slide1:checked~.slider-container .slider-blocks,main #slide1:checked~.bottom-container .phrase-container .phrase-blocks {
+    margin-left: 0
+}
+
+main #slide2:checked~.slider-container .slider-blocks,main #slide2:checked~.bottom-container .phrase-container .phrase-blocks {
+    margin-left: -100%
+}
+
+main #slide3:checked~.slider-container .slider-blocks, main #slide3:checked~.bottom-container .phrase-container .phrase-blocks {
+    margin-left: -200%
+}
+
+main #slide4:checked~.slider-container .slider-blocks, main #slide4:checked~.bottom-container .phrase-container .phrase-blocks {
+    margin-left: -300%
+}
+
+main #slide5:checked~.slider-container .slider-blocks, main #slide5:checked~.bottom-container .phrase-container .phrase-blocks {
+    margin-left: -400%
+}
+main #slide1:checked~.bottom-container .phrase-container .phrase-blocks .phrase-b:nth-child(1),
+main #slide2:checked~.bottom-container .phrase-container .phrase-blocks .phrase-b:nth-child(2),
+main #slide3:checked~.bottom-container .phrase-container .phrase-blocks .phrase-b:nth-child(3),
+main #slide4:checked~.bottom-container .phrase-container .phrase-blocks .phrase-b:nth-child(4),
+main #slide5:checked~.bottom-container .phrase-container .phrase-blocks .phrase-b:nth-child(5) {
+    opacity: 1
+}
+
+@media only screen and (max-width:850px) and (min-width:450px) {
+    main .slider-container {
+        border-radius: 0
+    }
+}
+
+@media (max-width:450px) {
+    main .bottom-container {
+        flex-direction: column-reverse;
+    }
+    main .phrase-b, main .slider-dots {
+        text-align: center;
+    }
+    main .slider-container {
+        border-radius: 0
+    }
+    main .slider-container, main .slider-dots {
+        margin-bottom: 10%;
+    }
+}
+
+@media only screen and (min-width:850px) {
+
+}
