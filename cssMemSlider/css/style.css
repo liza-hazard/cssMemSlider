@@ -2,7 +2,7 @@ body {
     background: #25282A;
 }
 main .container {
-    max-width: 75em;
+    max-width: 85%;
     margin: 1em auto;
     position: relative
 }
@@ -38,24 +38,24 @@ main .slider-dots {
 
 main .slider-dots label {
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 50%;
     display: inline-block;
-    width: 10px;
-    height: 10px;
+    width: 0.8em;
+    height: 0.8em;
     background: #bbb;
+    border: 1px solid #bbb;
     -webkit-transition: all .3s;
     -moz-transition: all .3s;
     transition: all .3s
 }
 
 main .bottom-container .slider-dots label:hover {
-    background: #ccc;
-    border-color: #777
+    background: transparent;
+    border: 1px solid #ccc;
 }
 
 main .phrase-b {
     font-style: italic;
-    line-height: 20px;
     opacity: 0;
     color: #000;
     text-align: left;
@@ -66,15 +66,17 @@ main .phrase-b {
 
 main .phrase-b h3 {
     color: #fcfff4;
-    margin: 0 0 5px;
     font-weight: 400;
     font-size: 1.5em;
     font-style: normal
 }
 main .bottom-container {
     display: flex;
+    align-items: center;
 }
-
+main .slider-container {
+    margin-bottom: 5%;
+}
 main .slider-container, main .bottom-container .phrase-container {
     width: 100%;
     overflow: hidden;
@@ -104,7 +106,13 @@ main #slide2:checked~.bottom-container .slider-dots label:nth-child(2),
 main #slide3:checked~.bottom-container .slider-dots label:nth-child(3),
 main #slide4:checked~.bottom-container .slider-dots label:nth-child(4),
 main #slide5:checked~.bottom-container .slider-dots label:nth-child(5) {
-    background: #333
+    background: #333;
+    border-color: #333;
+}
+main #slide1:checked~.bottom-container .slider-dots label:hover {
+    background: #333;
+    border-color: #ccc;
+
 }
 
 main #slide1:checked~.slider-container .slider-blocks,main #slide1:checked~.bottom-container .phrase-container .phrase-blocks {
@@ -126,6 +134,13 @@ main #slide4:checked~.slider-container .slider-blocks, main #slide4:checked~.bot
 main #slide5:checked~.slider-container .slider-blocks, main #slide5:checked~.bottom-container .phrase-container .phrase-blocks {
     margin-left: -400%
 }
+main #slide1:checked~.bottom-container .phrase-container .phrase-blocks .phrase-b:nth-child(1),
+main #slide2:checked~.bottom-container .phrase-container .phrase-blocks .phrase-b:nth-child(2),
+main #slide3:checked~.bottom-container .phrase-container .phrase-blocks .phrase-b:nth-child(3),
+main #slide4:checked~.bottom-container .phrase-container .phrase-blocks .phrase-b:nth-child(4),
+main #slide5:checked~.bottom-container .phrase-container .phrase-blocks .phrase-b:nth-child(5) {
+    opacity: 1
+}
 
 @media only screen and (max-width:850px) and (min-width:450px) {
     main .slider-container {
@@ -133,18 +148,21 @@ main #slide5:checked~.slider-container .slider-blocks, main #slide5:checked~.bot
     }
 }
 
-@media only screen and (max-width:450px) {
+@media (max-width:450px) {
+    main .bottom-container {
+        flex-direction: column-reverse;
+    }
+    main .phrase-b, main .slider-dots {
+        text-align: center;
+    }
     main .slider-container {
         border-radius: 0
     }
-
-    main .slider-container .phrase {
-        opacity: 0
+    main .slider-container, main .slider-dots {
+        margin-bottom: 10%;
     }
 }
 
 @media only screen and (min-width:850px) {
-    main body {
-        padding: 0 80px
-    }
+
 }
